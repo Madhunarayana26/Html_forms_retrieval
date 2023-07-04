@@ -1,0 +1,15 @@
+def insert_webpage(request):
+    if request.method=='POST':
+        topic=request.POST['tn']        
+        TO=Topic.objects.get(Topic_name=topic)
+
+
+        name=request.POST['name']     
+        url=request.POST['url']     
+
+        WO=WebPage.objects.get_or_create(Topic_name=TO,Name=name,Url=url)[0]
+        WO.save()
+
+
+        return HttpResponse('insertion of webpage is done')
+    return render(request,'insert_webpage.html')

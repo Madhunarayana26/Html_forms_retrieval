@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Retrieving data</h1>
+    <form action="" method="POST">
+    {% csrf_token %}
+    <fieldset style="width: fit-content;">
+        <label for="topic">Select topic_name:</label>
+
+        <select name="topic" id="topic" multiple>
+        {% for to in LTO %}
+            <option value="{{to}}">{{to.Topic_name}}</option>
+        {% endfor %}
+        </select>
+    <br><br>
+    <input type="submit" value="fetch it">
+
+    </fieldset>
+    </form>
+</body>
+</html>

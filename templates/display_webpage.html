@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Displaying webpages of the selected topic</h1>
+    <table border="1px">
+        <tr>
+            <th>Topic_name</th>
+            <th>Name</th>
+            <th>Url</th>
+        </tr>
+        {% for to in WOS %}
+        <tr>
+            <td>{{to.Topic_name}}</td>
+            <td>{{to.Name}}</td>
+            <td>{{to.Url}}</td>
+        </tr>
+        {% endfor %}
+
+
+
+
+    </table>
+</body>
+</html>
